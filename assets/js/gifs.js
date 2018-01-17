@@ -6,7 +6,7 @@ $("button").on("click", function() {
   // Constructing a URL to search Giphy for the name of the person who said the quote
   var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
     person + "bx6GCebgZFn3m2iZqfE2l2LOke09FssU";
-
+    //y0landa!j
   // Performing our AJAX GET request
   $.ajax({
       url: queryURL,
@@ -52,7 +52,7 @@ $("button").on("click", function() {
       var number = 0;
       var tabIndexSet = 1;
       //builds the answer radio buttons
-      var questionListing = wweWrestlers[number];
+      var wrestlerArray = wweWrestlers[number];
 
 
       function radioBuilder() {
@@ -65,7 +65,7 @@ $("button").on("click", function() {
         result.html('');
         //for loop
         for (var i = 0; i < questionListing.length; i++) {
-          result.append('<input type="radio" name="usernames" value="' + questionListing[i] + '"tabindex="' + tabIndexSet++ + '" />');
+          result.append('<button data-person="' + wrestlerArray [i] + '"tabindex="' + tabIndexSet++ + '" />');
           console.log("wrestler button builder is working");
           }
       }
