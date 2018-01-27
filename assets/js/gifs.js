@@ -18,6 +18,7 @@ $( document ).ready(function() {
   wrestlerBuilder();
 
   $("#submitBtn").on("click", function(e){
+      e.preventDefault();
         if( !$("#wrestlerInput").val() ) {
           $("#wrestlerInput").addClass('warning');
         } else {
@@ -26,8 +27,8 @@ $( document ).ready(function() {
           wweWrestlers.push(newChallenger);
           wrestlerBuilder();
         }
-        e.preventDefault();
-        $(this).unbind(e);
+
+        //$(this).unbind(e);
   });
   // $("#wrestlerInput").keypress(function(e){
   //       if( !$("#wrestlerInput").val() ) {
@@ -45,7 +46,7 @@ $( document ).ready(function() {
   //       }
   // });
   // Event listener for all button elements
-  $("#buttonHouse button").on("click", function() {
+  $("#buttonHouse").on("click", "button", function() {
     // In this case, the "this" keyword refers to the button that was clicked
     var person = $(this).attr("data-person");
 
